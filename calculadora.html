@@ -26,13 +26,54 @@
 		
 		
 		function calcular(){
-			var alcatra;
-			var carne_de_sol;
-			var contra_file;
-			var fraldinha;
-			var maminha;
-			var picanha;
-			var pernil_de_cordeiro;
+			var homens = $("#qtdeHomens").val();
+			var mulheres = $("#qtdeMulheres").val();
+			var criancas = $("#qtdeCriancas").val();
+			
+			var qtdeCarne = 0;
+			var kgCarne = 0;
+			var msg = "";
+			
+			if(homens==0 && mulheres==0 &&  criancas==0){
+				alert("Insira a quantidade de pessoas para realizar o calculo !");
+			}else{
+				if(document.getElementById("idAlcatra").checked == true)
+					qtdeCarne++;
+				if(document.getElementById("idCarneDeSol").checked == true)
+					qtdeCarne++;
+				if(document.getElementById("idContraFile").checked == true)
+					qtdeCarne++;
+				if(document.getElementById("idFraldinha").checked == true)
+					qtdeCarne++;
+				if(document.getElementById("idMaminha").checked == true)
+					qtdeCarne++;
+				if(document.getElementById("idPicanha").checked == true)
+					qtdeCarne++;
+				if(document.getElementById("idPernilDeCordeiro").checked == true)
+					qtdeCarne++;
+				
+				kgCarne = ((homens*0.6)+(mulheres*0.4)+(criancas*0.2))/qtdeCarne;
+				if(document.getElementById("idAlcatra").checked == true)
+					msg = msg + "Alcatra: " +kgCarne +" kg\n";
+				if(document.getElementById("idCarneDeSol").checked == true)
+					msg = msg + "Carne de Sol: " +kgCarne +" kg\n";
+				if(document.getElementById("idContraFile").checked == true)
+					msg = msg + "Contra Filé: " +kgCarne +" kg\n";
+				if(document.getElementById("idFraldinha").checked == true)
+					msg = msg + "Fraldinha: " +kgCarne +" kg\n";
+				if(document.getElementById("idMaminha").checked == true)
+					msg = msg + "Maminha: " +kgCarne +" kg\n";
+				if(document.getElementById("idPicanha").checked == true)
+					msg = msg + "Picanha: " +kgCarne +" kg\n";
+				if(document.getElementById("idPernilDeCordeiro").checked == true)
+					msg = msg + "Pernil de Cordeiro: " +kgCarne +"Kg\n";
+				
+				
+				alert(msg);
+				
+				
+				
+			}
 		}
     </script>
   </head>
@@ -49,46 +90,82 @@
             <form name="formulario-pessoa">
                 <div class="form-group">
                     <label for="formControlRange">Homens <spam id="textoQtdeHomens"></spam></label>
-    				<input type="range" class="form-control-range" id="qtdeHomens" value="0" onchange="mostrarQtdeHomens()">
+    				<input type="range" list="tickmarks" class="form-control-range" id="qtdeHomens" value="0" onchange="mostrarQtdeHomens()"><datalist id="tickmarks">
+  <option value="0">
+  <option value="10">
+  <option value="20">
+  <option value="30">
+  <option value="40">
+  <option value="50">
+  <option value="60">
+  <option value="70">
+  <option value="80">
+  <option value="90">
+  <option value="100">
+</datalist>
   				</div>
                 <div class="form-group">
     				<label for="formControlRange">Mulheres <spam id="textoQtdeMulheres"></spam></label>
-    				<input type="range" class="form-control-range" id="qtdeMulheres" value="0" onChange="mostrarQtdeMulheres()">
+    				<input type="range" list="tickmarks" class="form-control-range" id="qtdeMulheres" value="0" onChange="mostrarQtdeMulheres()"><datalist id="tickmarks">
+  <option value="0">
+  <option value="10">
+  <option value="20">
+  <option value="30">
+  <option value="40">
+  <option value="50">
+  <option value="60">
+  <option value="70">
+  <option value="80">
+  <option value="90">
+  <option value="100">
+</datalist>
   				</div>
                 <div class="form-group">
     				<label for="formControlRange">Crianças <spam id="textoQtdeCriancas"></spam></label>
-    				<input type="range" class="form-control-range" id="qtdeCriancas" value="0" onChange="mostrarQtdeCriancas()">
+    				<input type="range" list="tickmarks" class="form-control-range" id="qtdeCriancas" value="0" onChange="mostrarQtdeCriancas()"><datalist id="tickmarks">
+  <option value="0">
+  <option value="10">
+  <option value="20">
+  <option value="30">
+  <option value="40">
+  <option value="50">
+  <option value="60">
+  <option value="70">
+  <option value="80">
+  <option value="90">
+  <option value="100">
+</datalist>
   				</div>
 			</form>
             <h4 class="card-title">Que tipo de carne você quer servir?</h4>
             <form name="formulario-carne">
-            	<div class="form-group">
             	<h5 class="form-check">Cortes Bovinos</h5>
-  						<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            	<div class="form-group">
+  						<input class="form-check-input" type="checkbox" value="on" id="idAlcatra" name="alcatra">
   						<label class="form-check-label" for="defaultCheck1">&ensp;&ensp;&ensp;Alcatra
   						</label>
                     	<br>
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="" id="idCarneDeSol" name="carnedesol">
   						<label class="form-check-label" for="defaultCheck1">&ensp;&ensp;&ensp;Carne de Sol
   						</label>
                     	<br>
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="" id="idContraFile">
   						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Contra Filé
   						</label>
                     	<br>
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="" id="idFraldinha">
   						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Fraldinha
   						</label>
                     	<br>
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="" id="idMaminha">
   						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Maminha
   						</label>
             	        <br>
-                	    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                	    <input class="form-check-input" type="checkbox" value="" id="idPicanha">
   						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Picanha
   						</label>
             	        <br>
-                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                         <input class="form-check-input" type="checkbox" value="" id="idPernilDeCordeiro">
             	         <label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Pernil de Cordeiro
   						</label>
 			</div>

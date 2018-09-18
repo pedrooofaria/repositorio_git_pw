@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Calculadora de Churrasco</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      
+    <script>
+		function mostrarQtdeHomens() {
+            $("#textoQtdeHomens").text($("#qtdeHomens").val());
+        }
+		function mostrarQtdeMulheres() {
+            $("#textoQtdeMulheres").text($("#qtdeMulheres").val());
+        }
+		function mostrarQtdeCriancas() {
+            $("#textoQtdeCriancas").text($("#qtdeCriancas").val());
+        }
+		
+		
+		function calcular(){
+			var alcatra;
+			var carne_de_sol;
+			var contra_file;
+			var fraldinha;
+			var maminha;
+			var picanha;
+			var pernil_de_cordeiro
+		}
+    </script>
+  </head>
+  <body>
+    
+    <div class="modal-dialog">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+        <div class="modal-content">
+            <div class="panel-heading">
+                <h2>Calculadora de Churrasco</h2>
+            </div>
+            <div class="panel-body">
+            <h4 class="card-title">Quantas pessoas vão ao churrasco ?</h4>
+            <form name="formulario-pessoa">
+                <div class="form-group">
+                    <label for="formControlRange">Homens <spam id="textoQtdeHomens"></spam></label>
+    				<input type="range" class="form-control-range" id="qtdeHomens" value="0" onchange="mostrarQtdeHomens()">
+  				</div>
+                <div class="form-group">
+    				<label for="formControlRange">Mulheres <spam id="textoQtdeMulheres"></spam></label>
+    				<input type="range" class="form-control-range" id="qtdeMulheres" value="0" onChange="mostrarQtdeMulheres()">
+  				</div>
+                <div class="form-group">
+    				<label for="formControlRange">Crianças <spam id="textoQtdeCriancas"></spam></label>
+    				<input type="range" class="form-control-range" id="qtdeCriancas" value="0" onChange="mostrarQtdeCriancas()">
+  				</div>
+			</form>
+            <h4 class="card-title">Que tipo de carne você quer servir?</h4>
+            <form name="formulario-carne">
+            	<div class="form-group">
+            	<h5 class="form-check">Cortes Bovinos</h5>
+  						<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  						<label class="form-check-label" for="defaultCheck1">&ensp;&ensp;&ensp;Alcatra
+  						</label>
+                    	<br>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  						<label class="form-check-label" for="defaultCheck1">&ensp;&ensp;&ensp;Carne de Sol
+  						</label>
+                    	<br>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Contra Filé
+  						</label>
+                    	<br>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Fraldinha
+  						</label>
+                    	<br>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Maminha
+  						</label>
+            	        <br>
+                	    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Picanha
+  						</label>
+            	        <br>
+                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            	         <label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Pernil de Cordeiro
+  						</label>
+			</div>
+            <h4 class="card-title">Bebidas e acompanhamentos para o seu churrasco</h4>
+            <form name="formulario-bebidas-acompanhamento">
+            	<div class="form-group">
+            	<h5 class="form-check">Selecione as bebidas e acompanhamentos</h5>
+  						<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  						<label class="form-check-label" for="defaultCheck1">&ensp;&ensp;&ensp;Cerveja 600ML
+  						</label>
+                    	<br>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  						<label class="form-check-label" for="defaultCheck1">&ensp;&ensp;&ensp;Cerveja Lata ou Long Neck
+  						</label>
+                    	<br>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Refrigerante 2 Litros
+  						</label>
+                    	<br>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Pães
+  						</label>
+                    	<br>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Farofa Temperada 500g
+  						</label>
+            	        <br>
+                	    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Pacote Guardanapos</label>
+  						<br>
+                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            	         <label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Copos de Plástico
+					    </label>
+                        <br>
+                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            	         <label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Carvão 5kg
+					    </label>
+            
+           </div>
+           <button class="btn btn-sm btn-success" type="button" onclick="calcular()">Calcular</a>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

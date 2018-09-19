@@ -34,9 +34,15 @@
 			var kgCarne = 0;
 			var msg = "";
 			
+			var qtdeTotal = (homens)+(mulheres)+(criancas);
+			var auxRefri = 1;
+			if(qtdeTotal%5 == 0)
+				auxRefri++;
+			
 			if(homens==0 && mulheres==0 &&  criancas==0){
-				alert("Insira a quantidade de pessoas para realizar o calculo !");
+				alert("Insira pelo menos 1 pessoa para realizar o calculo !");
 			}else{
+				//contando a quantidade de carnes
 				if(document.getElementById("idAlcatra").checked == true)
 					qtdeCarne++;
 				if(document.getElementById("idCarneDeSol").checked == true)
@@ -52,27 +58,50 @@
 				if(document.getElementById("idPernilDeCordeiro").checked == true)
 					qtdeCarne++;
 				
+				//calculando a media de carnes por pessoas
 				kgCarne = ((homens*0.6)+(mulheres*0.4)+(criancas*0.2))/qtdeCarne;
+				//criando msg a ser exibida para usuario
+				msg = msg + "\n\n=====      Carnes      =====\n\n";
 				if(document.getElementById("idAlcatra").checked == true)
-					msg = msg + "Alcatra: " +kgCarne +" kg\n";
+					msg = msg + "Alcatra:               " +kgCarne +" kg\n";
 				if(document.getElementById("idCarneDeSol").checked == true)
-					msg = msg + "Carne de Sol: " +kgCarne +" kg\n";
+					msg = msg + "Carne de Sol:          " +kgCarne +" kg\n";
 				if(document.getElementById("idContraFile").checked == true)
-					msg = msg + "Contra Filé: " +kgCarne +" kg\n";
+					msg = msg + "Contra Filé:           " +kgCarne +" kg\n";
 				if(document.getElementById("idFraldinha").checked == true)
-					msg = msg + "Fraldinha: " +kgCarne +" kg\n";
+					msg = msg + "Fraldinha:             " +kgCarne +" kg\n";
 				if(document.getElementById("idMaminha").checked == true)
-					msg = msg + "Maminha: " +kgCarne +" kg\n";
+					msg = msg + "Maminha:               " +kgCarne +" kg\n";
 				if(document.getElementById("idPicanha").checked == true)
-					msg = msg + "Picanha: " +kgCarne +" kg\n";
+					msg = msg + "Picanha:               " +kgCarne +" kg\n";
 				if(document.getElementById("idPernilDeCordeiro").checked == true)
-					msg = msg + "Pernil de Cordeiro: " +kgCarne +"Kg\n";
+					msg = msg + "Pernil de Cordeiro:    " +kgCarne +"Kg\n";
+
+				//completando a msg com os acompanhamentos
+				msg = msg + "\n\n=====  Acompanhamentos =====\n\n";
+				if(document.getElementById("idCerveja").checked == true)
+					msg = msg + "Cerveja 600ML:         " +((homens*2)+(mulheres*2)) +" unidade(s)";
+				if(document.getElementById("idCervejaLata").checked == true)
+					msg = msg + "Cerveja Lata:         " +((homens*2)+(mulheres*2)) +" unidade(s)";
+				/*if(document.getElementById("idRefrigerante").checked == true)
+					msg = msg + "Refrigerante 2 Litros:         " +(auxRefri) +" unidade(s)";
+				if(document.getElementById("idPaes").checked == true)
+					msg = msg + "Pães:                 " +((homen +" unidade(s)";*/
+			
+					
+					
+				
+				/*
+				idCervejaLata
+				idRefrigerante
+				idPaes
+				idFarofa
+				idGuardanapos
+				idCopos
+				idCarvao  */
 				
 				
 				alert(msg);
-				
-				
-				
 			}
 		}
     </script>
@@ -145,27 +174,27 @@
   						<label class="form-check-label" for="defaultCheck1">&ensp;&ensp;&ensp;Alcatra
   						</label>
                     	<br>
-                        <input class="form-check-input" type="checkbox" value="" id="idCarneDeSol" name="carnedesol">
+                        <input class="form-check-input" type="checkbox" value="on" id="idCarneDeSol" name="carnedesol">
   						<label class="form-check-label" for="defaultCheck1">&ensp;&ensp;&ensp;Carne de Sol
   						</label>
                     	<br>
-                        <input class="form-check-input" type="checkbox" value="" id="idContraFile">
+                        <input class="form-check-input" type="checkbox" value="on" id="idContraFile">
   						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Contra Filé
   						</label>
                     	<br>
-                        <input class="form-check-input" type="checkbox" value="" id="idFraldinha">
+                        <input class="form-check-input" type="checkbox" value="on" id="idFraldinha">
   						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Fraldinha
   						</label>
                     	<br>
-                        <input class="form-check-input" type="checkbox" value="" id="idMaminha">
+                        <input class="form-check-input" type="checkbox" value="on" id="idMaminha">
   						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Maminha
   						</label>
             	        <br>
-                	    <input class="form-check-input" type="checkbox" value="" id="idPicanha">
+                	    <input class="form-check-input" type="checkbox" value="on" id="idPicanha">
   						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Picanha
   						</label>
             	        <br>
-                         <input class="form-check-input" type="checkbox" value="" id="idPernilDeCordeiro">
+                         <input class="form-check-input" type="checkbox" value="on" id="idPernilDeCordeiro">
             	         <label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Pernil de Cordeiro
   						</label>
 			</div>
@@ -173,34 +202,34 @@
             <form name="formulario-bebidas-acompanhamento">
             	<div class="form-group">
             	<h5 class="form-check">Selecione as bebidas e acompanhamentos</h5>
-  						<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  						<input class="form-check-input" type="checkbox" value="on" id="idCerveja" name="cerveja">
   						<label class="form-check-label" for="defaultCheck1">&ensp;&ensp;&ensp;Cerveja 600ML
   						</label>
                     	<br>
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="on" id="idCervejaLata" name="cervejalata">
   						<label class="form-check-label" for="defaultCheck1">&ensp;&ensp;&ensp;Cerveja Lata ou Long Neck
   						</label>
                     	<br>
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="on" id="idRefrigerante" name="refrigerante">
   						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Refrigerante 2 Litros
   						</label>
                     	<br>
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="on" id="idPaes" name="paes">
   						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Pães
   						</label>
                     	<br>
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="on" id="idFarofa" name="farofa">
   						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Farofa Temperada 500g
   						</label>
             	        <br>
-                	    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                	    <input class="form-check-input" type="checkbox" value="on" id="idGuardanapos" name="guardanapos">
   						<label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Pacote Guardanapos</label>
   						<br>
-                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                         <input class="form-check-input" type="checkbox" value="on" id="idCopos" name="copos">
             	         <label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Copos de Plástico
 					    </label>
                         <br>
-                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                         <input class="form-check-input" type="checkbox" value="on" id="idCarvao" name="carvao">
             	         <label class="form-check-label" for="defaultCheck1">	&ensp;&ensp;&ensp;Carvão 5kg
 					    </label>
             
